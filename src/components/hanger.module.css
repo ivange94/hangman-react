@@ -98,3 +98,39 @@
     left: 170px;
     transform: rotate(25deg);
 }
+
+.rope {
+    position: absolute;
+    border: 1px solid black;
+    width: 1px;
+    height: 30px;
+    left: 149px;
+    top: -8px;
+}
+
+.horizontalStick {
+    position: absolute;
+    border: 1px solid black;
+    width: 180px;
+    height: 1px;
+    top: -8px;
+    left: -12px;
+}
+
+.verticalStick {
+    position: absolute;
+    border: 1px solid black;
+    width: 1px;
+    height: 295px;
+    top: -6px;
+    left: -12px;
+}
+
+.verticalStickBottom {
+    position: absolute;
+    border: 1px solid black;
+    width: 350px;
+    height: 1px;
+    bottom: -39px;
+    left: -10px;
+}
