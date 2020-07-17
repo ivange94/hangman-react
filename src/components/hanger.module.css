@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 300px;
+    height: 250px;
+    display: block;
+    position: relative;
+}
+
+.head {
+    width: 35px;
+    height: 41px;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 21px;
+    left: 133px;
+    z-index: 1;
+}
+
+.torso {
+    width: 2px;
+    height: 100px;
+    border: 1px solid black;
+    display: block;
+    position: absolute;
+    top: 63px;
+    left: 150px;
+}
+
+.leftleg {
+    width: 1px;
+    height: 90px;
+    border: 1px solid black;
+    display: block;
+    position: absolute;
+    top: 163px;
+    left: 149px;
+    transform: rotate(12deg);
+    transform-origin: top;
+}
+
+.rightleg {
+    width: 1px;
+    height: 90px;
+    border: 1px solid black;
+    display: block;
+    position: absolute;
+    top: 163px;
+    left: 152px;
+    transform: rotate(-12deg);
+    transform-origin: top;
+}
+
+.leftarm {
+    width: 73px;
+    height: 1px;
+    border: 1px solid black;
+    display: block;
+    position: absolute;
+    top: 113px;
+    left: 86px;
+    transform: rotate(-40deg);
+}
+
+.rightarm {
+    width: 73px;
+    height: 1px;
+    border: 1px solid black;
+    display: block;
+    position: absolute;
+    top: 113px;
+    left: 144px;
+    transform: rotate(40deg);
+}
+
+.leftfoot {
+    width: 25px;
+    height: 1px;
+    border: 1px solid black;
+    display: block;
+    position: absolute;
+    top: 256px;
+    left: 108px;
+    transform: rotate(-25deg);
+}
+
+.rightfoot {
+    width: 25px;
+    height: 1px;
+    border: 1px solid black;
+    display: block;
+    position: absolute;
+    top: 256px;
+    left: 170px;
+    transform: rotate(25deg);
+}
