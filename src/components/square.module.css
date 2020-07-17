@@ -13,6 +13,6 @@
     width: 83px;
 }
 
-.square:focus {
-    outline: none;
+.square:visited {
+    background-color: grey;
 }

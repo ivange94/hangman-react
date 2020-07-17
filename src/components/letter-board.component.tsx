@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './letter-board.module.css';
 import Square from './square.component';
 
 export default function LetterBoard(props: LetterBoardProps) {
-    
+
     function handleClick(letter: string) {
         props.onLetterClick(letter)
     }
@@ -13,97 +13,124 @@ export default function LetterBoard(props: LetterBoardProps) {
             <div className={styles.boardRow}>
                 <Square 
                     value="A"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
                 <Square 
                     value="B"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
                 <Square 
                     value="C"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
                 <Square 
                     value="D"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
                 <Square 
                     value="E"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
             </div>
             <div className={styles.boardRow}>
                 <Square 
                     value="F"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
                 <Square 
                     value="G"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
                 <Square 
                     value="H"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
                 <Square 
                     value="I"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
                 <Square 
                     value="J"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
             </div>
             <div className={styles.boardRow}>
                 <Square 
                     value="K"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
                 <Square 
                     value="L"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
                 <Square 
                     value="M"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
                 <Square 
                     value="N"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
                 <Square 
                     value="O"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
             </div>
             <div className={styles.boardRow}>
                 <Square 
                     value="P"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
                 <Square 
                     value="Q"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
                 <Square 
                     value="R"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
                 <Square 
                     value="S"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
                 <Square 
                     value="T"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
             </div>
             <div className={styles.boardRow}>
                 <Square 
                     value="U"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
                 <Square 
                     value="V"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
                 <Square 
                     value="W"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
                 <Square 
                     value="X"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
                 <Square 
                     value="Y"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
             </div>
             <div className={styles.boardRow}>
                 <Square 
                     value="Z"
-                    onClick={handleClick}/>
+                    onClick={handleClick}
+                    reset={props.reset}/>
             </div>
         </div>
     )
 }
 
 type LetterBoardProps = {
-    onLetterClick: Function
+    onLetterClick: Function;
+    reset: boolean;
 }

@@ -10,7 +10,9 @@ export default function Game() {
     const random = words[Math.floor(Math.random()*words.length)];
     const [selected, setSelected] = useState(random);
     const [word, setWord] = useState<string[]>([]);
-
+    const [reset, setReset] = useState(false);
+    
+ 
     useEffect(() => {
         let new_word: string[] = selected.split('').map(() => "");
         setWord(new_word);
@@ -27,19 +29,25 @@ export default function Game() {
         setWord(tmp_word);
     }
 
+    function handleReset() {
+        const random = words[Math.floor(Math.random()*words.length)];
+        setSelected(random);
+        setReset(true);
+    }
+
     return (
         <div className={styles.game}>
             <div>
-                <Menu />
+                <Menu onReset={handleReset}/>
             </div>
             <div className={styles.section}>
-                <Hanger />
+                <Hanger reset={reset}/>
             </div>
             <div className={styles.section}>
                 <Word word={word}/>
             </div>
             <div className={styles.section}>
-                <LetterBoard onLetterClick={handleLetterSelected}/>
+                <LetterBoard onLetterClick={handleLetterSelected} reset={reset}/>
             </div>
         </div>
     )

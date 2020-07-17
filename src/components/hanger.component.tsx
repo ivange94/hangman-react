@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './hanger.module.css';
 
-export default function Hanger() {
+export default function Hanger(props: HangerProps) {
     return (
         <div className={styles.wrapper}>
             <div className={styles.verticalStickBottom}></div>
@@ -19,4 +19,8 @@ export default function Hanger() {
         </div>
 
     )
+}
+
+type HangerProps = {
+    reset: boolean;
 }
