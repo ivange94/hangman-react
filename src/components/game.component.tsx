@@ -3,6 +3,7 @@ import styles from './game.module.css';
 import LetterBoard from './letter-board.component';
 import Word from './word.component';
 import Hanger from './hanger.component';
+import Menu from './menu.component';
 
 export default function Game() {
     const words = ["LARRY", "JACK", "ROOM", "BED", "HOUSE", "ENERGY", "JOB", "GAME", "SCHOOL", "AROUND", "LAST"];
@@ -28,6 +29,9 @@ export default function Game() {
 
     return (
         <div className={styles.game}>
+            <div>
+                <Menu />
+            </div>
             <div className={styles.section}>
                 <Hanger />
             </div>

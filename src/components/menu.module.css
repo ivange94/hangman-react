@@ -1,0 +1,14 @@
+.menu {
+    border: 1px dashed black;
+    width: 195px;
+    height: 100px;
+    position: absolute;
+    left: 800px;
+    top: 11px;
+}
+
+.resetStartButton {
+    position: absolute;
+    top: 110px;
+    left: 135px;
+}
