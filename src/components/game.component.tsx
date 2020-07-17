@@ -10,7 +10,7 @@ export default function Game() {
     const random = words[Math.floor(Math.random()*words.length)];
     const [selected, setSelected] = useState(random);
     const [word, setWord] = useState<string[]>([]);
-    const [reset, setReset] = useState(false);
+    const [lives, setLives] = useState(12);
     
  
     useEffect(() => {
@@ -26,28 +26,31 @@ export default function Game() {
                 tmp_word[i] = letter;
             }    
         }
+        const lives_left = lives - 1;
+        console.log("Lives left: ", lives_left);
+        setLives(lives_left);
         setWord(tmp_word);
     }
 
     function handleReset() {
         const random = words[Math.floor(Math.random()*words.length)];
         setSelected(random);
-        setReset(true);
+        setLives(12);
     }
 
     return (
         <div className={styles.game}>
             <div>
-                <Menu onReset={handleReset}/>
+                <Menu onReset={handleReset} lives={lives}/>
             </div>
             <div className={styles.section}>
-                <Hanger reset={reset}/>
+                <Hanger lives={lives}/>
             </div>
             <div className={styles.section}>
                 <Word word={word}/>
             </div>
             <div className={styles.section}>
-                <LetterBoard onLetterClick={handleLetterSelected} reset={reset}/>
+                <LetterBoard onLetterClick={handleLetterSelected} lives={lives}/>
             </div>
         </div>
     )

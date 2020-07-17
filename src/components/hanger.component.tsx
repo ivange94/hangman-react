@@ -22,5 +22,5 @@ export default function Hanger(props: HangerProps) {
 }
 
 type HangerProps = {
-    reset: boolean;
+    lives: number;
 }

@@ -14,117 +14,117 @@ export default function LetterBoard(props: LetterBoardProps) {
                 <Square 
                     value="A"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
                 <Square 
                     value="B"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
                 <Square 
                     value="C"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
                 <Square 
                     value="D"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
                 <Square 
                     value="E"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
             </div>
             <div className={styles.boardRow}>
                 <Square 
                     value="F"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
                 <Square 
                     value="G"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
                 <Square 
                     value="H"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
                 <Square 
                     value="I"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
                 <Square 
                     value="J"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
             </div>
             <div className={styles.boardRow}>
                 <Square 
                     value="K"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
                 <Square 
                     value="L"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
                 <Square 
                     value="M"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
                 <Square 
                     value="N"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
                 <Square 
                     value="O"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
             </div>
             <div className={styles.boardRow}>
                 <Square 
                     value="P"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
                 <Square 
                     value="Q"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
                 <Square 
                     value="R"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
                 <Square 
                     value="S"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
                 <Square 
                     value="T"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
             </div>
             <div className={styles.boardRow}>
                 <Square 
                     value="U"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
                 <Square 
                     value="V"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
                 <Square 
                     value="W"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
                 <Square 
                     value="X"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
                 <Square 
                     value="Y"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
             </div>
             <div className={styles.boardRow}>
                 <Square 
                     value="Z"
                     onClick={handleClick}
-                    reset={props.reset}/>
+                    lives={props.lives}/>
             </div>
         </div>
     )
@@ -132,5 +132,5 @@ export default function LetterBoard(props: LetterBoardProps) {
 
 type LetterBoardProps = {
     onLetterClick: Function;
-    reset: boolean;
+    lives: number;
 }
