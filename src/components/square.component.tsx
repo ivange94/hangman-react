@@ -3,19 +3,24 @@ import styles from './square.module.css';
 
 export default function Square(props: SquareProps) {
     const [style, setStyle] = useState({});
+    const [clicked, setClicked] = useState<boolean>(false);
 
     useEffect(() => {
         if (props.lives === 12) {
             setStyle({});
+            setClicked(false);
         }
     }, [props.lives]);
 
     function handleClick() {
-        props.onClick(props.value);
-        setStyle({
-            "backgroundColor": "grey",
-            "cursor": "not-allowed"
-        })
+        if (!clicked) { 
+            props.onClick(props.value);
+            setStyle({
+                "backgroundColor": "grey",
+                "cursor": "not-allowed"
+            });
+            setClicked(true)
+        }
     }
 
     return (
