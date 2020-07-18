@@ -5,21 +5,21 @@ export default function Square(props: SquareProps) {
     const [style, setStyle] = useState({});
     const [clicked, setClicked] = useState<boolean>(false);
 
-    useEffect(() => {
-        if (props.lives === 12) {
+    useEffect(() =>{
+        if (props.reset) {
             setStyle({});
             setClicked(false);
         }
-    }, [props.lives]);
+    }, [props.reset])
 
     function handleClick() {
-        if (!clicked) { 
-            props.onClick(props.value);
+        if (!clicked && !props.disableClick) {
             setStyle({
                 "backgroundColor": "grey",
                 "cursor": "not-allowed"
             });
-            setClicked(true)
+            setClicked(true);
+            props.onClick(props.value);
         }
     }
 
@@ -33,5 +33,6 @@ export default function Square(props: SquareProps) {
 type SquareProps = {
     value: string;
     onClick: Function;
-    lives: number;
+    reset?: boolean;
+    disableClick?: boolean;
 }

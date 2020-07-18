@@ -12,12 +12,15 @@ export default function Game() {
     const [word, setWord] = useState<string[]>([]);
     const [lives, setLives] = useState<number>(12);
     const [fails, setFails] = useState<number>(0);
-    
+    const [message, setMessage] = useState(`Lives left: ${lives}`);
+    const [reset, setReset] = useState(false);
+    const [disableClick, setDisableClick] = useState(false);
  
     useEffect(() => {
         let new_word: string[] = selected.split('').map(() => "");
-        setWord(new_word);
-        console.log(selected);// make game easier by showing the answer in console
+        setWord(new_word);console.log(new_word);
+        setReset(false);
+        console.log(selected);
     }, [selected])
 
     function handleLetterSelected(letter: string) {
@@ -35,6 +38,22 @@ export default function Game() {
             fails_tmp += 1;
             lives_left--;
         }
+        let win = true;
+        for (let i = 0;i < tmp_word.length;i++) {
+            if (tmp_word[i] === "") {
+                win = false;
+                break;
+            }
+        }
+        if (win) {
+            setMessage("You Win!!!");
+            setDisableClick(true)
+        } else if (lives_left < 1) {
+            setMessage("You Lose!!!");
+            setDisableClick(true);
+        } else {
+            setMessage(`Lives left: ${lives_left}`);
+        }
         setLives(lives_left);
         setWord(tmp_word);
         setFails(fails_tmp);
@@ -45,12 +64,15 @@ export default function Game() {
         setSelected(random);
         setLives(12);
         setFails(0);
+        setMessage(`Lives left: ${12}`);
+        setReset(true);
+        setDisableClick(false);
     }
 
     return (
         <div className={styles.game}>
             <div>
-                <Menu onReset={handleReset} lives={lives}/>
+                <Menu onReset={handleReset} message={message}/>
             </div>
             <div className={styles.section}>
                 <Hanger fails={fails}/>
@@ -59,7 +81,7 @@ export default function Game() {
                 <Word word={word}/>
             </div>
             <div className={styles.section}>
-                <LetterBoard onLetterClick={handleLetterSelected} lives={lives}/>
+                <LetterBoard onLetterClick={handleLetterSelected} reset={reset} disableClick={disableClick}/>
             </div>
         </div>
     )

@@ -4,7 +4,7 @@ import Square from './square.component';
 
 export default function Word(props: WordProps) {
     let squares = props.word.map(char => 
-        <Square value={char} onClick={() => console.log()} lives={12}/>
+        <Square value={char} disableClick={true} onClick={() => console.log()}/>
     );
 
     return (

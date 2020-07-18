@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './letter-board.module.css';
 import Square from './square.component';
 
@@ -14,117 +14,143 @@ export default function LetterBoard(props: LetterBoardProps) {
                 <Square 
                     value="A"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
                 <Square 
                     value="B"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
                 <Square 
                     value="C"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
                 <Square 
                     value="D"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
                 <Square 
                     value="E"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
             </div>
             <div className={styles.boardRow}>
                 <Square 
                     value="F"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
                 <Square 
                     value="G"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
                 <Square 
                     value="H"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
                 <Square 
                     value="I"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
                 <Square 
                     value="J"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
             </div>
             <div className={styles.boardRow}>
                 <Square 
                     value="K"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
                 <Square 
                     value="L"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
                 <Square 
                     value="M"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
                 <Square 
                     value="N"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
                 <Square 
                     value="O"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
             </div>
             <div className={styles.boardRow}>
                 <Square 
                     value="P"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
                 <Square 
                     value="Q"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
                 <Square 
                     value="R"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
                 <Square 
                     value="S"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
                 <Square 
                     value="T"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
             </div>
             <div className={styles.boardRow}>
                 <Square 
                     value="U"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
                 <Square 
                     value="V"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
                 <Square 
                     value="W"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
                 <Square 
                     value="X"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
                 <Square 
                     value="Y"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
             </div>
             <div className={styles.boardRow}>
                 <Square 
                     value="Z"
                     onClick={handleClick}
-                    lives={props.lives}/>
+                    reset={props.reset}
+                    disableClick={props.disableClick}/>
             </div>
         </div>
     )
@@ -132,5 +158,6 @@ export default function LetterBoard(props: LetterBoardProps) {
 
 type LetterBoardProps = {
     onLetterClick: Function;
-    lives: number;
+    reset: boolean;
+    disableClick: boolean;
 }

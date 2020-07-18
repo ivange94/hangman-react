@@ -5,9 +5,7 @@ export default function Menu(props: MenuProps) {
     return (
         <div className={styles.menu}>
             <div className={styles.menuScreen}>
-                { props.lives > 0 ?
-                    <span className={styles.message}>Lives left: {props.lives}</span>:
-                    <span className={styles.message}>You Lose!!!</span>}
+                <span className={styles.message}>{props.message}</span>
             </div>
             <button className={styles.resetStartButton} onClick={() => props.onReset()}>Restart</button>
         </div>
@@ -16,5 +14,5 @@ export default function Menu(props: MenuProps) {
 
 type MenuProps = {
     onReset: Function;
-    lives: number;
+    message: string;
 }
