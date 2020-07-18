@@ -8,9 +8,10 @@ import Menu from './menu.component';
 export default function Game() {
     const words = ["LARRY", "JACK", "ROOM", "BED", "HOUSE", "ENERGY", "JOB", "GAME", "SCHOOL", "AROUND", "LAST"];
     const random = words[Math.floor(Math.random()*words.length)];
-    const [selected, setSelected] = useState(random);
+    const [selected, setSelected] = useState<string>(random);
     const [word, setWord] = useState<string[]>([]);
-    const [lives, setLives] = useState(12);
+    const [lives, setLives] = useState<number>(12);
+    const [fails, setFails] = useState<number>(0);
     
  
     useEffect(() => {
@@ -21,21 +22,29 @@ export default function Game() {
 
     function handleLetterSelected(letter: string) {
         const tmp_word = word.slice();
+        let hit = false;
         for (let i = 0; i < selected.length;i++) {
             if (letter === selected[i]) {
+                hit = true;
                 tmp_word[i] = letter;
             }    
         }
-        const lives_left = lives - 1;
-        console.log("Lives left: ", lives_left);
+        let lives_left = lives;
+        let fails_tmp = fails;
+        if (!hit) {
+            fails_tmp += 1;
+            lives_left--;
+        }
         setLives(lives_left);
         setWord(tmp_word);
+        setFails(fails_tmp);
     }
 
     function handleReset() {
         const random = words[Math.floor(Math.random()*words.length)];
         setSelected(random);
         setLives(12);
+        setFails(0);
     }
 
     return (
@@ -44,7 +53,7 @@ export default function Game() {
                 <Menu onReset={handleReset} lives={lives}/>
             </div>
             <div className={styles.section}>
-                <Hanger lives={lives}/>
+                <Hanger fails={fails}/>
             </div>
             <div className={styles.section}>
                 <Word word={word}/>
