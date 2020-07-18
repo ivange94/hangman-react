@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Preview
 
-![](http://g.recordit.co/iyznSaoNgy.gif)
+![](https://raw.githubusercontent.com/ivange94/hangman-react/master/gamepreview.gif)
 
 ## Available Scripts
 
